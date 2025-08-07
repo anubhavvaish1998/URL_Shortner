@@ -12,11 +12,12 @@ def shorten_url():
     expire_datetime = data.get('expireDateTime')
 
     return jsonify({
-        'url': url,
-        'customAlias': custom_alias,
-        'isExpirable': is_expirable,
-        'expireDateTime': expire_datetime
+        'short_url': url,
+        'orginal_url': url,
+        'short_code': is_expirable,
+        'created_at': expire_datetime,
+        "expire_datetime" : expire_datetime
     }), 200
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
